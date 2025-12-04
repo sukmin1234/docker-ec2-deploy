@@ -47,7 +47,7 @@ jobs:
       - name: Build and push Docker image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
+          ECR_REPOSITORY: docker-web-app
           IMAGE_TAGS: ${{ steps.meta.outputs.tags }}
           APP_PORT: ${{ vars.APP_PORT || '3000' }}
         run: |
