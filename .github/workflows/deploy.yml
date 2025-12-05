@@ -112,7 +112,7 @@ jobs:
 
             aws configure set aws_access_key_id "${{ secrets.AWS_ACCESS_KEY_ID }}"
             aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-            aws configure set aws_session_token "${{ secrets.AWS_SESSION_TOKEN }}"
+           
             aws configure set region "${AWS_REGION}"
             # ECR 로그인 및 이미지 Pull
             aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REGISTRY}
